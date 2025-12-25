@@ -1,10 +1,12 @@
 
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Search, Command, Cpu, Sparkles, Send, X, MessageSquare, Menu } from 'lucide-react';
+import { Search, Command, Cpu, Sparkles, Send, X, MessageSquare, Menu, Github, ExternalLink, Info } from 'lucide-react';
 import { SHORTCUTS, CATEGORIES } from './constants';
 import { ShortcutCard } from './components/ShortcutCard';
 import { Category, ChatMessage } from './types';
 import { ShortcutAI } from './geminiService';
+
+const GITHUB_REPO = "https://github.com/ibdaayat-files/-88.git";
 
 const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -61,14 +63,16 @@ const App: React.FC = () => {
           </div>
           
           <div className="hidden md:flex items-center gap-6">
-            <a href="#" className="hover:text-indigo-400 transition-colors">عن الموقع</a>
-            <a href="#" className="hover:text-indigo-400 transition-colors">الأكثر استخداماً</a>
+            <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-400 transition-colors">
+              <Github size={20} />
+              <span>المشروع على GitHub</span>
+            </a>
             <button 
               onClick={() => setIsChatOpen(true)}
               className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg font-bold transition-all"
             >
               <Sparkles size={18} />
-              اسأل الذكاء الاصطناعي
+              مساعد الذكاء الاصطناعي
             </button>
           </div>
           
@@ -82,8 +86,12 @@ const App: React.FC = () => {
       <header className="relative pt-20 pb-16 px-6 text-center overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-indigo-600/10 blur-[120px] rounded-full -z-10"></div>
         <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-bold mb-6">
+            <Info size={16} />
+            <span>دليلك الشامل للاحترافية والسرعة</span>
+          </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-            احتراف الكيبورد يبدأ <span className="text-indigo-500">من هنا</span>
+            اختصارات كيبورد الكمبيوتر <br/><span className="text-indigo-500">في مكان واحد</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
             مستودع شامل لكل اختصارات الكمبيوتر، الويندوز، الماك وأشهر برامج التطوير. ابحث عن أي اختصار تريده في ثوانٍ.
@@ -213,9 +221,23 @@ const App: React.FC = () => {
       )}
 
       {/* Footer */}
-      <footer className="mt-20 py-10 border-t border-white/5 text-center">
-        <p className="text-slate-500 mb-2">تم التطوير بواسطة فريق <span className="text-white font-bold">88</span> لخدمة المجتمع التقني</p>
-        <p className="text-slate-600 text-sm">جميع الحقوق محفوظة &copy; {new Date().getFullYear()}</p>
+      <footer className="mt-20 py-12 border-t border-white/5 bg-slate-900/20">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-right">
+            <h4 className="text-xl font-bold text-white mb-2">88 موقع</h4>
+            <p className="text-slate-500">تم التطوير بواسطة فريق <span className="text-white font-bold">88</span> لخدمة المجتمع التقني العربي</p>
+          </div>
+          
+          <div className="flex items-center gap-6">
+             <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-white transition-all">
+                <Github size={20} />
+                <span>المصدر على GitHub</span>
+                <ExternalLink size={14} />
+             </a>
+          </div>
+
+          <p className="text-slate-600 text-sm">جميع الحقوق محفوظة &copy; {new Date().getFullYear()}</p>
+        </div>
       </footer>
     </div>
   );

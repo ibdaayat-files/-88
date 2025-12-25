@@ -1,20 +1,25 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# 88 - دليل اختصارات الكيبورد الاحترافي
 
-This contains everything you need to run your app locally.
+موقع "88" هو منصة متكاملة لاستعراض وشرح اختصارات لوحة المفاتيح لمختلف أنظمة التشغيل والبرامج، مدعوم بالذكاء الاصطناعي لمساعدة المستخدمين.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1rom9eD0hrHbZv95-OsN6UQx4RMXny4vy
+## رابط المستودع (GitHub)
+[https://github.com/ibdaayat-files/-88.git](https://github.com/ibdaayat-files/-88.git)
 
-## Run Locally
+## المميزات
+- **البحث الذكي:** اعثر على أي اختصار في ثوانٍ.
+- **مساعد ذكي:** مدعوم بـ Gemini AI للإجابة على تساؤلات الاختصارات المعقدة.
+- **تصميم احترافي:** واجهة عصرية تدعم الوضع الليلي واللغة العربية بشكل كامل.
+- **تصنيفات متنوعة:** تغطي Windows، macOS، VS Code، والمتصفحات.
 
-**Prerequisites:**  Node.js
+## طريقة الرفع على GitHub
+لرفع التحديثات على المستودع الخاص بك:
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+git init
+git remote add origin https://github.com/ibdaayat-files/-88.git
+git add .
+git commit -m "إطلاق النسخة الاحترافية من موقع 88"
+git branch -M main
+git push -u origin main
+```
